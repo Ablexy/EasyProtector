@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.net.LocalServerSocket;
 import android.text.TextUtils;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,9 +58,9 @@ public class VirtualApkCheckUtil {
      */
     private String[] virtualPkgs = {
             "com.bly.dkplat",//多开分身本身的包名
-//            "dkplugin.pke.nnp",//多开分身克隆应用的包名会随机变换
+            "dkplugin.pke.nnp",//多开分身克隆应用的包名会随机变换
             "com.by.chaos",//chaos引擎
-            "com.lbe.parallel",//平行空间
+            "com.lbe.parallel.intl",//平行空间
             "com.excelliance.dualaid",//双开助手
             "com.lody.virtual",//VirtualXposed，VirtualApp
             "com.qihoo.magic"//360分身大师
@@ -74,6 +75,7 @@ public class VirtualApkCheckUtil {
      */
     public boolean checkByPrivateFilePath(Context context, VirtualCheckCallback callback) {
         String path = context.getFilesDir().getPath();
+        Toast.makeText(context, ""+path, Toast.LENGTH_SHORT).show();
         for (String virtualPkg : virtualPkgs) {
             if (path.contains(virtualPkg)) {
                 if (callback != null) callback.findSuspect();

@@ -15,14 +15,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByPrivateFilePath"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByPrivateFilePath" />
+                android:text="checkByPrivateFilePath \n 检测app私有目录" />
 
             <TextView
                 android:id="@+id/v1"
@@ -33,14 +33,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByOriginApkPackageName"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByOriginApkPackageName" />
+                android:text="checkByOriginApkPackageName\n检测原始包名>1" />
 
             <TextView
                 android:id="@+id/v2"
@@ -51,14 +51,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByMultiApkPackageName"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByMultiApkPackageName" />
+                android:text="checkByMultiApkPackageName\n检测已加载的so是否包括多开应用包名" />
 
             <TextView
                 android:id="@+id/v3"
@@ -69,14 +69,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByHasSameUid"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByHasSameUid" />
+                android:text="checkByHasSameUid \n 检测同个UID的私有目录数>1" />
 
             <TextView
                 android:id="@+id/v4"
@@ -87,14 +87,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByPortListening"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByPortListening" />
+                android:text="checkByPortListeningb \n 端口监听" />
 
             <TextView
                 android:id="@+id/v5"
@@ -105,14 +105,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkByCreateLocalServerSocket"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkByCreateLocalServerSocket" />
+                android:text="checkByCreateLocalServerSocket \n 端口监听" />
 
             <TextView
                 android:id="@+id/v6"
@@ -128,14 +128,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkRoot"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkRoot" />
+                android:text="checkRoot \n 检测是否root" />
 
             <TextView
                 android:id="@+id/r1"
@@ -152,14 +152,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkDebuggable"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkDebuggable" />
+                android:text="checkDebuggable \n 检测是否是debug版本" />
 
             <TextView
                 android:id="@+id/d1"
@@ -170,14 +170,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkDebuggerAttach"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkDebuggerAttach" />
+                android:text="checkDebuggerAttach \n 检测是否充电或usb连接" />
 
             <TextView
                 android:id="@+id/d2"
@@ -188,14 +188,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkTracer"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkTracer" />
+                android:text="checkTracer--跳转页面" />
 
             <TextView
                 android:id="@+id/d3"
@@ -212,14 +212,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/checkXP"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="checkXP" />
+                android:text="checkXP \n 判断是否存在xposed框架" />
 
             <TextView
                 android:id="@+id/x1"
@@ -238,7 +238,7 @@
             android:id="@+id/readSysProperty"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="click me emulator info" />
+            android:text="click me emulator info \n 是否运行在模拟器上" />
 
         <TextView
             android:id="@+id/e1"
@@ -246,11 +246,29 @@
             android:layout_height="wrap_content"
             android:minWidth="100dp"
             android:minHeight="20dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/antiAosp"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="模拟器检测" />
+
+            <TextView
+                android:id="@+id/tv_anti"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="检测结果"
+                android:gravity="center_vertical" />
+        </LinearLayout>
+
 
         <Button
             android:id="@+id/test"
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:text="for test" />
     </LinearLayout>
 </ScrollView>

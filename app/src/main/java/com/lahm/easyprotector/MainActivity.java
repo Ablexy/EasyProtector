@@ -1,5 +1,6 @@
 package com.lahm.easyprotector;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -7,10 +8,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.widget.TextView;
 
+import com.lahm.library.AntiAospUtils.AntiAospUtils;
 import com.lahm.library.EasyProtectorLib;
 import com.lahm.library.EmulatorCheckCallback;
+import com.lahm.library.HookUtil;
 import com.lahm.library.SecurityCheckUtil;
 import com.lahm.library.VirtualApkCheckUtil;
+import com.lahm.library.VirtualCheckCallback;
 
 public class MainActivity extends AppCompatActivity
         implements View.OnClickListener {
@@ -33,6 +37,7 @@ public class MainActivity extends AppCompatActivity
         findViewById(R.id.checkXP).setOnClickListener(this);
         findViewById(R.id.readSysProperty).setOnClickListener(this);
         findViewById(R.id.test).setOnClickListener(this);
+        findViewById(R.id.antiAosp).setOnClickListener(this);
     }
 
     private void forTest() {
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity
         switch (v.getId()) {
             case R.id.test:
                 forTest();
+//                TextView v0 = findViewById(R.id.v1);
+//                v0.setText(HookUtil.isHook(this) ?
+//                        "Hooks-NO" : "maps-OK");
                 break;
             case R.id.checkByPrivateFilePath:
                 TextView v1 = findViewById(R.id.v1);
@@ -66,9 +74,14 @@ public class MainActivity extends AppCompatActivity
                         "uid-NO" : "uid-OK");
                 break;
             case R.id.checkByPortListening:
-                VirtualApkCheckUtil.getSingleInstance().checkByPortListening("port", null);
                 TextView v5 = findViewById(R.id.v5);
-                v5.setText("port listening");
+
+                VirtualApkCheckUtil.getSingleInstance().checkByPortListening("port", new VirtualCheckCallback() {
+                    @Override
+                    public void findSuspect() {
+                        v5.setText("port listening---NO");
+                    }
+                });
                 break;
             case R.id.checkByCreateLocalServerSocket:
                 TextView v6 = findViewById(R.id.v6);
@@ -93,9 +106,12 @@ public class MainActivity extends AppCompatActivity
                         : "only-charging");
                 break;
             case R.id.checkTracer:
-                EasyProtectorLib.checkIsBeingTracedByC();
+//                EasyProtectorLib.checkIsBeingTracedByC();
                 TextView d3 = findViewById(R.id.d3);
                 d3.setText("see log");
+                Intent intent = new Intent(this,VirtualActivity.class);
+                startActivity(intent);
+
                 break;
             case R.id.checkXP:
                 TextView x1 = findViewById(R.id.x1);
@@ -111,6 +127,10 @@ public class MainActivity extends AppCompatActivity
                     }
                 });
                 break;
+//            case R.id.antiAosp:
+//                TextView anti = findViewById(R.id.tv_anti);
+//                anti.setText(AntiAospUtils.checkDeviceInfo(this)? "当前设备可疑" : "非虚拟设备");
+//                 break;
         }
     }
 }
